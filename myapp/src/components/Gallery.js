@@ -27,7 +27,6 @@ import NewIteam from './Product/NewIteam';
     },[])
 
 
-    
         return(
 
             <div>

@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "baf906ab-4563-40e0-a69a-59ed85b05208": {
+      "ProjectGuid": "baf906ab-4563-40e0-a69a-59ed85b05208",
+      "DisplayName": "CommentWebApi",
+      "ColorIndex": 0
+    },
+    "a5d2f86e-666c-4736-85f1-6817f6da89d8": {
+      "ProjectGuid": "a5d2f86e-666c-4736-85f1-6817f6da89d8",
+      "DisplayName": "Repository",
+      "ColorIndex": 1
+    },
+    "06549b3f-1312-48b4-aa6b-305e922b59e5": {
+      "ProjectGuid": "06549b3f-1312-48b4-aa6b-305e922b59e5",
+      "DisplayName": "ConfigEfcore",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
