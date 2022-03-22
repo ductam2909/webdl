@@ -64,8 +64,8 @@ function Home(){
             <div className="item active">
               <div className="slider">
                 <div className="carousel-caption kb_caption slider-grid">
-                  <h3>Singapore</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <h3>Cầu Rồng</h3>
+                  <p>Một trong những biểu tượng của tp Đà nẵng đáng sống.</p>
                 </div>
               </div>
             </div>
@@ -73,8 +73,8 @@ function Home(){
             <div className="item">
               <div className="slider slider1">
                 <div className="carousel-caption kb_caption kb_caption_right slider-grid">
-                  <h3>Hawaii</h3>
-                  <p>Vivamus vel nulla venenatis, tincidunt mi vel, consequat erat.</p>
+                  <h3>Cầu vàng</h3>
+                  <p>Đứng đầu trong danh sách những kỳ quan mới của thế giới do Báo Daily Mail (Anh) bình chọn.</p>
                 </div>
               </div>
             </div>
@@ -82,8 +82,8 @@ function Home(){
             <div className="item">
               <div className="slider slider2">
                 <div className="carousel-caption kb_caption kb_caption_center slider-grid">
-                  <h3>Hong Kong</h3>
-                  <p>Nunc turpis purus, vestibulum at quam ac, feugiat dignissim nunc</p>
+                  <h3>Biển mỹ Khê</h3>
+                  <p>Top 1 trong 6 bãi biển quyến rũ nhất hành tinh vào năm 2005</p>
                 </div>
               </div>
             </div>
@@ -110,22 +110,22 @@ function Home(){
             <div className="about-grids">
               <div className="col-md-3 about-grid">
                 <div className="about-grid-info effect-1">
-                  <h4>San Francisco</h4>
+                  <h4>Bà Nà Hills</h4>
                 </div>
               </div>
               <div className="col-md-3 about-grid">
                 <div className="about-grid-info about-grid-info1 effect-1">
-                  <h4>Maldives</h4>
+                  <h4>Sun Weel</h4>
                 </div>
               </div>
               <div className="col-md-3 about-grid">
                 <div className="about-grid-info about-grid-info2 effect-1">
-                  <h4>Ireland</h4>
+                  <h4>Sơn Trà</h4>
                 </div>
               </div>
               <div className="col-md-3 about-grid">
                 <div className="about-grid-info about-grid-info3 effect-1">
-                  <h4>New Zealand</h4>
+                  <h4>Đèo Hải Vân</h4>
                 </div>
               </div>
               <div className="clearfix"> </div>

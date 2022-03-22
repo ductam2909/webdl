@@ -11,7 +11,7 @@ import NewIteam from './Product/NewIteam';
     },[])
     console.log(lists)
     const iteams= lists.map(test=>{
-      return (<NewIteam key ={test.id} id = {test.id} tieude={test.tieuDe}/>)
+      return (<NewIteam key ={test.id} id = {test.id} tieude={test.tieuDe} anh ={test.anh1} trichdan={test.trichDan}/>)
     })
     // state = {
     //     data: [],
@@ -85,18 +85,20 @@ import NewIteam from './Product/NewIteam';
         {/* //banner */}
         {/* a-about */}
         <div className="a-grid">
-          <div className="container">
-            <div className="w3l-about-heading">
+          {/* <div className="container"> */}
+            {/* <div className="w3l-about-heading">
               <h2>Our Gallery</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta efficitur ante quis volutpat.</p>
-            </div>
+            </div> */}
             
 
-            <div className="news">
+           
               
           <div className="container">
+
+          <div className="news">
             <div className="news-heading">
-              <h3>News &amp; Events</h3>
+              <h3>Các điểm đến lý tưởng</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta efficitur ante quis volutpat.</p>
             </div>
           
@@ -203,7 +205,7 @@ import NewIteam from './Product/NewIteam';
               <div className="clearfix" />
             </div>
           </div>
-        </div>
+        {/* </div> */}
         {/* //a-about */}
         {/* footer */}
         <div className="footer">

@@ -1,6 +1,6 @@
 import React,{useState , useEffect , useRef} from 'react';
 import {Link,useParams , useLocation } from 'react-router-dom';
-
+import NewIteam2 from './Product/NewIteam2';
 function Single(){
   const params = new URLSearchParams(window.location.search) // id=123
   const id = params.get('id')
@@ -25,8 +25,17 @@ function Single(){
   }
   },[])
 
+  const [lists,setlists] = useState([])
+  useEffect(()=>{
+    fetch("http://localhost:3333/lists").then(res=>res.json()).then(res=>setlists(res))
+   
+  },[])
+  console.log(lists)
+  const iteams= lists.map(test=>{
+    return (<NewIteam2 key ={test.id} id = {test.id} tieude={test.tieuDe} />)
+  })
 
-
+  
   
         return(
             <div>
@@ -179,12 +188,14 @@ function Single(){
                   <div className="categories">
                     <h3>Categories</h3>
                     <ul>
+                     {iteams}
                       <li><a href="#">Phasellus sem leo, interdum quis risus</a></li>
                       <li><a href="#">Nullam egestas nisi id malesuada aliquet </a></li>
                       <li><a href="#"> Donec condimentum purus urna venenatis</a></li>
                       <li><a href="#">Ut congue, nisl id tincidunt lobor mollis</a></li>
                       <li><a href="#">Cum sociis natoque penatibus et magnis</a></li>
                       <li><a href="#">Suspendisse nec magna id ex pretium</a></li>
+                      
                     </ul>
                   </div>
                   <div className="categories">

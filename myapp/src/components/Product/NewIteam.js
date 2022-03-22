@@ -24,7 +24,9 @@ function NewIteam (props){
         <div className="col-md-4 news-grid class1">
         <div className="agile-news-grid-info">
           <div className="news-grid-info-img">
-            <a href="single.html"><img src="assets/images/n1.jpg" alt="" /></a>
+          {/* "assets/images/n1.jpg" */}
+            <a href="single.html"><img src={props.anh} alt="" /></a>
+            
           </div>
           <div className="news-grid-info-bottom">
             <div className="date-grid">
@@ -39,7 +41,8 @@ function NewIteam (props){
             <div className="news-grid-info-bottom-text">
             
             <Link to= {path} >{props.tieude}</Link>
-              <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+              <p>{props.trichdan}</p>
+              
             </div>
           </div>
         </div>
