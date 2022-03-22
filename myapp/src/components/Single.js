@@ -189,12 +189,7 @@ function Single(){
                     <h3>Categories</h3>
                     <ul>
                      {iteams}
-                      <li><a href="#">Phasellus sem leo, interdum quis risus</a></li>
-                      <li><a href="#">Nullam egestas nisi id malesuada aliquet </a></li>
-                      <li><a href="#"> Donec condimentum purus urna venenatis</a></li>
-                      <li><a href="#">Ut congue, nisl id tincidunt lobor mollis</a></li>
-                      <li><a href="#">Cum sociis natoque penatibus et magnis</a></li>
-                      <li><a href="#">Suspendisse nec magna id ex pretium</a></li>
+                     
                       
                     </ul>
                   </div>
