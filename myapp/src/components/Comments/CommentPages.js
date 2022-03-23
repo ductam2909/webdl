@@ -45,11 +45,16 @@ const CommentPages = ({ name, id }) => {
 				height: "800px",
 				overflow: "auto",
 			}}>
-			{listComments.length === 0 && (
-				<svg viewBox="25 25 50 50">
-					<circle cx="50" cy="50" r="20"></circle>
-				</svg>
-			)}
+			<div
+				style={{
+					marginLeft: "375px",
+				}}>
+				{listComments.length === 0 && (
+					<svg viewBox="25 25 50 50">
+						<circle cx="50" cy="50" r="20"></circle>
+					</svg>
+				)}
+			</div>
 			{listComments.map(comments => {
 				return comments.userComments.map(comment => {
 					return (
