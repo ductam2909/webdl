@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
-import { CommentPages } from "./Comments";
-
+import NewIteam2 from "./Product/NewIteam2";
 function Single() {
 	const params = new URLSearchParams(window.location.search); // id=123
 	const id = params.get("id");
@@ -22,6 +21,30 @@ function Single() {
 			return () => (mount.current = false);
 		}
 	}, []);
+
+	useEffect(() => {
+		mount.current = true;
+		if (id) {
+			fetch("http://localhost:3333/lists")
+				.then(res => res.json())
+				.then(res => res.find(item => item.id === +id))
+				.then(item => {
+					if (mount.current) setItem(item);
+				});
+			return () => (mount.current = false);
+		}
+	}, []);
+
+	const [lists, setlists] = useState([]);
+	useEffect(() => {
+		fetch("http://localhost:3333/lists")
+			.then(res => res.json())
+			.then(res => setlists(res));
+	}, []);
+	console.log(lists);
+	const iteams = lists.map(test => {
+		return <NewIteam2 key={test.id} id={test.id} tieude={test.tieuDe} />;
+	});
 
 	return (
 		<div>
@@ -184,7 +207,103 @@ function Single() {
 							</div>
 							<div className="response">
 								<h3>Responses</h3>
-								<CommentPages name="detail" id="1" />
+								<div className="media response-info">
+									<div className="media-left response-text-left">
+										<a href="#">
+											<img
+												className="media-object"
+												src="images/t1.jpg"
+												alt=""
+											/>
+										</a>
+										<h5>
+											<a href="#">Admin</a>
+										</h5>
+									</div>
+									<div className="media-body response-text-right">
+										<p>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit,There
+											are many variations of passages of
+											Lorem Ipsum available, sed do
+											eiusmod tempor incididunt ut labore
+											et dolore magna aliqua.
+										</p>
+										<ul>
+											<li>June 21, 2016</li>
+											<li>
+												<a href="single.html">Reply</a>
+											</li>
+										</ul>
+										<div className="media response-info">
+											<div className="media-left response-text-left">
+												<a href="#">
+													<img
+														className="media-object"
+														src="images/t2.jpg"
+														alt=""
+													/>
+												</a>
+												<h5>
+													<a href="#">Admin</a>
+												</h5>
+											</div>
+											<div className="media-body response-text-right">
+												<p>
+													Lorem ipsum dolor sit amet,
+													consectetur adipisicing
+													elit,There are many
+													variations of passages of
+													Lorem Ipsum available, sed
+													do eiusmod tempor incididunt
+													ut labore et dolore magna
+													aliqua.
+												</p>
+												<ul>
+													<li>June 21, 2016</li>
+													<li>
+														<a href="single.html">
+															Reply
+														</a>
+													</li>
+												</ul>
+											</div>
+											<div className="clearfix"> </div>
+										</div>
+									</div>
+									<div className="clearfix"> </div>
+								</div>
+								<div className="media response-info">
+									<div className="media-left response-text-left">
+										<a href="#">
+											<img
+												className="media-object"
+												src="images/t3.jpg"
+												alt=""
+											/>
+										</a>
+										<h5>
+											<a href="#">Admin</a>
+										</h5>
+									</div>
+									<div className="media-body response-text-right">
+										<p>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit,There
+											are many variations of passages of
+											Lorem Ipsum available, sed do
+											eiusmod tempor incididunt ut labore
+											et dolore magna aliqua.
+										</p>
+										<ul>
+											<li>June 21, 2016</li>
+											<li>
+												<a href="single.html">Reply</a>
+											</li>
+										</ul>
+									</div>
+									<div className="clearfix"> </div>
+								</div>
 							</div>
 							<div className="opinion">
 								<h2>Leave Your Comment</h2>
@@ -215,40 +334,7 @@ function Single() {
 					<div className="col-md-4 blog-top-right-grid">
 						<div className="categories">
 							<h3>Categories</h3>
-							<ul>
-								<li>
-									<a href="#">
-										Phasellus sem leo, interdum quis risus
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Nullam egestas nisi id malesuada aliquet{" "}
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										{" "}
-										Donec condimentum purus urna venenatis
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Ut congue, nisl id tincidunt lobor
-										mollis
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Cum sociis natoque penatibus et magnis
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Suspendisse nec magna id ex pretium
-									</a>
-								</li>
-							</ul>
+							<ul>{iteams}</ul>
 						</div>
 						<div className="categories">
 							<h3>Archive</h3>

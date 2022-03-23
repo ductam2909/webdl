@@ -152,7 +152,7 @@ class About extends Component{
         </div>
       </div>
       <div className="col-md-33 agileinfo-team-grid">
-        <img src="images/t2.jpg" alt="" />
+        <img src="assets/images/t1.jpg" alt="" />
         <div className="captn">
           <h4>Peter Parker</h4>
           <p>Aliquam non</p>
@@ -166,7 +166,7 @@ class About extends Component{
         </div>
       </div>
       <div className="col-md-33 agileinfo-team-grid">
-        <img src="images/t3.jpg" alt="" />
+        <img src="assets/images/t3.jpg" alt="" />
         <div className="captn">
           <h4>Johan Botha</h4>
           <p>Nulla molestie</p>

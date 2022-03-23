@@ -137,16 +137,16 @@ ul.nav.navbar-nav {
 }
 /*-- slider --*/
 .slider {
-    background: url(../images/8.jpg) no-repeat 0px 0px;
+    background: url(../images/caurong.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 800px;
 }
 .slider1 {
-    background: url(../images/3.jpg) no-repeat 0px 0px;
+    background: url(../images/bana.jpeg) no-repeat 0px 0px;
     background-size: cover;
 }
 .slider2 {
-    background: url(../images/2.jpg) no-repeat 0px 0px;
+    background: url(../images/mykhe2.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 .slider-grid{
@@ -217,7 +217,7 @@ ul.nav.navbar-nav {
 	text-align:center;
 }
 .about-grid-info{
-    background: url(../images/a.png)no-repeat 0px 0px;
+    background: url(../images/ban_tr.png)no-repeat 0px 0px;
     background-size: cover;
     min-height: 255px;
 }
@@ -229,17 +229,17 @@ ul.nav.navbar-nav {
     line-height: 7.5em;
 }
 .about-grid-info1{
-	background: url(../images/a1.png)no-repeat 0px 0px;
+	background: url(../images/sunweel_tr.png)no-repeat 0px 0px;
 	background-size: cover;
     min-height: 255px;
 }
 .about-grid-info2{
-	background: url(../images/a2.png)no-repeat 0px 0px;
+	background: url(../images/sontra_tr.png)no-repeat 0px 0px;
 	background-size: cover;
     min-height: 255px;
 }
 .about-grid-info3{
-	background: url(../images/a3.png)no-repeat 0px 0px;
+	background: url(../images/haivan_tr.png)no-repeat 0px 0px;
 	background-size: cover;
     min-height: 255px;
 }
@@ -359,7 +359,8 @@ ul.nav.navbar-nav {
     padding: .5em;
 }
 .news-grid-info-img a img{
-	width:100%;
+	/* width:100%; */
+	width: 100%;height: 200px;
 }
 .news-grid-info-bottom{
     padding: 1em;
@@ -2369,6 +2370,10 @@ button.btn1:hover{
 		font-size: 1.2em;
 	}
 	.news-grid-info-bottom-text a {
+		font-size: .875em;
+	}
+
+	.news-grid-info-bottom-text p {
 		font-size: .875em;
 	}
 	.agileits-a-about-right h3 {

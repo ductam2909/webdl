@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import NewsDetail from './components/Detail/NewsDetail';
 
 import NewIteam from './components/Product/NewIteam';
+import NewIteam2 from './components/Product/NewIteam2';
 import Login from './components/backend/Login';
 import Passwordreset from './components/backend/Passwordreset';
 
@@ -45,6 +46,7 @@ function App() {
             <Route path='/contact' component={Contact}/>
 
             <Route path='/newiteam' component={NewIteam}/>
+            <Route path='/newiteam2' component={NewIteam2}/>
             <Route path='/single' component={Single}/>
             <Route path= '/qlproducts'><Products/></Route>
             <Route path= '/qlcreateproduct'><CreateProduct/></Route>
