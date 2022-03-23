@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import CommentInfo from "./CommentInfo";
 
-const Comment = ({ activity, addComment, getReplys, setActivity, comment }) => {
+const Comment = ({
+	activity,
+	addComment,
+	getReplys,
+	setActivity,
+	comment,
+	user,
+	idUser,
+}) => {
 	const [replys, setReplys] = useState([]);
 	const showReply =
 		activity && comment.id === activity.id && activity.type === "replying";
@@ -42,6 +50,8 @@ const Comment = ({ activity, addComment, getReplys, setActivity, comment }) => {
 							comment={comment}
 							activity={activity}
 							setActivity={setActivity}
+							user={user}
+							idUser={idUser}
 						/>
 					</ul>
 				)}
@@ -54,6 +64,8 @@ const Comment = ({ activity, addComment, getReplys, setActivity, comment }) => {
 							setActivity={setActivity}
 							comment={reply}
 							getReplys={getReplys}
+							user={user}
+							idUser={idUser}
 						/>
 					))}
 			</ul>

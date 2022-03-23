@@ -208,7 +208,12 @@ function Single() {
 							</div>
 							<div className="response">
 								<h3>Responses</h3>
-								<CommentPages name="detail" id="1" />
+								<CommentPages
+									name="detail"
+									id="1"
+									user="Nguyễn Thanh Huy"
+									idUser="1"
+								/>
 							</div>
 							<div className="opinion">
 								<h2>Leave Your Comment</h2>

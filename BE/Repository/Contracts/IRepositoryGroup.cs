@@ -5,5 +5,6 @@ namespace Repository.Contracts
 {
     public interface IRepositoryGroup : IRepositoryBase<Group>
     {
+
     }
 }

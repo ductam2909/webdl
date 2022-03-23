@@ -21,5 +21,20 @@ namespace Repository
                                            && e.ReplyUserCommentId.ToString().Equals(id)).OrderBy(x => x.CreateAt).ToList();
             return childs;
         }
+
+        public bool CreateUserComment(UserComment userComment, string page, string id)
+        {
+            try
+            {
+                _context.Add(userComment);
+                _context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+            return true;
+        }
     }
 }

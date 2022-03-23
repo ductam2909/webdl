@@ -6,18 +6,38 @@ export const getComment = (name, id) => {
 	return axios(`${url}/${name}/${id}`);
 };
 
+export const addUserComment = (page, id, userComment) => {
+	if (!id) id = "";
+	return axios.post(`${url}/create/${page}/${id}`, userComment);
+};
+
 export const getChildren = (page, pageId, id) => {
 	return axios(`${url}/${page}/${pageId}/children/${id}`);
 };
 
-export const createComment = async (text, parentId) => {
+/*
+		Id : auto
+		UserId: ID user
+		Name: Tên User,
+		ReplyUserId: Id ReplyUser,
+		ReplyUserCommentId: Id UserComment
+		Text : Nội dung
+		CommentGroupId : Id CommemtGroup
+	*/
+export const createComment = async (
+	UserId,
+	Name,
+	ReplyUserId,
+	ReplyUserCommentId,
+	Text,
+	CommentGroupId
+) => {
 	return {
-		id: Math.random().toString(36).substr(2, 9),
-		userId: 1,
-		userName: "",
-		parentId,
-		comment: text,
-		create: "27/08/2000#19:41",
-		replys: [],
+		UserId,
+		Name,
+		ReplyUserId,
+		ReplyUserCommentId,
+		Text,
+		CommentGroupId,
 	};
 };

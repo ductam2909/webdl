@@ -11,6 +11,8 @@ const CommentInfo = ({
 	addComment,
 	activity,
 	setActivity,
+	user,
+	idUser,
 }) => {
 	const [commentArea, setCommentArea] = useState("");
 
@@ -28,7 +30,9 @@ const CommentInfo = ({
 					/>
 				</div>
 				<div>
-					<h5 className="box--user--name">{comment.name}</h5>
+					<h5 className="box--user--name">
+						{!user ? comment.name : user}
+					</h5>
 				</div>
 			</div>
 
@@ -71,8 +75,12 @@ const CommentInfo = ({
 								className="action btn btn--success"
 								onClick={() => {
 									addComment(
+										idUser,
+										user,
 										commentArea,
-										comment.replyUserId
+										comment.userId,
+										comment.id,
+										comment.commentGroupId
 									);
 								}}>
 								Comment

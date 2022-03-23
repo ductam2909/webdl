@@ -16,7 +16,7 @@ public class UserComment
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    
+
     /// <summary>
     ///     <c>xác định Id của người viết comment</c>
     /// </summary>
@@ -62,4 +62,12 @@ public class UserComment
     public string? CommentGroupId { get; set; }
 
     public CommentGroup? CommentGroup { get; set; }
+
+
+
+    public override string ToString()
+    {
+        return "ID = " + Id + " - UserId " + UserId + " - Name " + Name + " - Text " + Text + " - CreateAt " + CreateAt + " - CommentGroupId " + CommentGroupId;
+    }
+
 }
