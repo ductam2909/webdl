@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 import NewIteam2 from "./Product/NewIteam2";
+import { CommentPages } from "./Comments";
 function Single() {
 	const params = new URLSearchParams(window.location.search); // id=123
 	const id = params.get("id");
@@ -207,103 +208,7 @@ function Single() {
 							</div>
 							<div className="response">
 								<h3>Responses</h3>
-								<div className="media response-info">
-									<div className="media-left response-text-left">
-										<a href="#">
-											<img
-												className="media-object"
-												src="images/t1.jpg"
-												alt=""
-											/>
-										</a>
-										<h5>
-											<a href="#">Admin</a>
-										</h5>
-									</div>
-									<div className="media-body response-text-right">
-										<p>
-											Lorem ipsum dolor sit amet,
-											consectetur adipisicing elit,There
-											are many variations of passages of
-											Lorem Ipsum available, sed do
-											eiusmod tempor incididunt ut labore
-											et dolore magna aliqua.
-										</p>
-										<ul>
-											<li>June 21, 2016</li>
-											<li>
-												<a href="single.html">Reply</a>
-											</li>
-										</ul>
-										<div className="media response-info">
-											<div className="media-left response-text-left">
-												<a href="#">
-													<img
-														className="media-object"
-														src="images/t2.jpg"
-														alt=""
-													/>
-												</a>
-												<h5>
-													<a href="#">Admin</a>
-												</h5>
-											</div>
-											<div className="media-body response-text-right">
-												<p>
-													Lorem ipsum dolor sit amet,
-													consectetur adipisicing
-													elit,There are many
-													variations of passages of
-													Lorem Ipsum available, sed
-													do eiusmod tempor incididunt
-													ut labore et dolore magna
-													aliqua.
-												</p>
-												<ul>
-													<li>June 21, 2016</li>
-													<li>
-														<a href="single.html">
-															Reply
-														</a>
-													</li>
-												</ul>
-											</div>
-											<div className="clearfix"> </div>
-										</div>
-									</div>
-									<div className="clearfix"> </div>
-								</div>
-								<div className="media response-info">
-									<div className="media-left response-text-left">
-										<a href="#">
-											<img
-												className="media-object"
-												src="images/t3.jpg"
-												alt=""
-											/>
-										</a>
-										<h5>
-											<a href="#">Admin</a>
-										</h5>
-									</div>
-									<div className="media-body response-text-right">
-										<p>
-											Lorem ipsum dolor sit amet,
-											consectetur adipisicing elit,There
-											are many variations of passages of
-											Lorem Ipsum available, sed do
-											eiusmod tempor incididunt ut labore
-											et dolore magna aliqua.
-										</p>
-										<ul>
-											<li>June 21, 2016</li>
-											<li>
-												<a href="single.html">Reply</a>
-											</li>
-										</ul>
-									</div>
-									<div className="clearfix"> </div>
-								</div>
+								<CommentPages name="detail" id="1" />
 							</div>
 							<div className="opinion">
 								<h2>Leave Your Comment</h2>
