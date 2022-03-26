@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ReactJs\\webdl\\BE\\Repository\\Repository.csproj": {}
+    "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "D:\\ReactJs\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj": {
+    "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ReactJs\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj",
+        "projectUniqueName": "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj",
         "projectName": "ConfigEfcore",
-        "projectPath": "D:\\ReactJs\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ReactJs\\webdl\\BE\\ConfigEfcore\\obj\\",
+        "projectPath": "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\ConfigEfcore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,26 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[11.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -69,26 +49,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ReactJs\\webdl\\BE\\Repository\\Repository.csproj": {
+    "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ReactJs\\webdl\\BE\\Repository\\Repository.csproj",
+        "projectUniqueName": "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "D:\\ReactJs\\webdl\\BE\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ReactJs\\webdl\\BE\\Repository\\obj\\",
+        "projectPath": "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,8 +77,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\ReactJs\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj": {
-                "projectPath": "D:\\ReactJs\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj"
+              "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj": {
+                "projectPath": "E:\\lập trình 2021-2022 - k2\\Đồ án chuyên ngành công nghệ phần mềm\\da726-3\\webdl\\BE\\ConfigEfcore\\ConfigEfcore.csproj"
               }
             }
           }
@@ -117,16 +92,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.3, )"
-            },
-            "NLog.Extensions.Logging": {
-              "target": "Package",
-              "version": "[5.0.0-rc2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -137,12 +102,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -11,6 +11,7 @@ import NewsDetail from './components/Detail/NewsDetail';
 import NewIteam from './components/Product/NewIteam';
 import NewIteam2 from './components/Product/NewIteam2';
 import Login from './components/backend/Login';
+import Reginster from './components/backend/Reginster';
 import Passwordreset from './components/backend/Passwordreset';
 
 import Customers from './components/backend/Customers/Customers';
@@ -65,6 +66,7 @@ function App() {
             <Route path= '/qledituser'><EditUser/></Route>
 
             <Route path='/login'><Login/></Route>
+            <Route path='/reginster'><Reginster/></Route>
             <Route path='/resetpass' component={Passwordreset}/>
           
           
