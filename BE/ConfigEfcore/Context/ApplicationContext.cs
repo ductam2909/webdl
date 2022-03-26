@@ -24,16 +24,15 @@ public class ApplicationContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.ApplyConfiguration(new GroupConfiguration());
-
-        modelBuilder.ApplyConfiguration(new CommentConfiguration());
         
         modelBuilder.ApplyConfiguration(new UserCommentConfiguration());
+
+
 
     }
 
     public DbSet<Group>? Groups { get; set; }
 
-    public DbSet<CommentGroup>? Comments { get; set; }
 
     public DbSet<UserComment>? Users { get; set; }
 

@@ -27,5 +27,5 @@ public class Group
     [StringLength(15, ErrorMessage = "Name can't be longer than 15 characters")]
     public string? Name { get; set; }
 
-    public ICollection<CommentGroup>? CommentGroups { get; set; }
+    public ICollection<UserComment>? UserComments { get; set; }
 }

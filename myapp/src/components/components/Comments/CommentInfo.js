@@ -1,18 +1,25 @@
-import React, { useState } from "react";
-import userIcon from "../../iconUser.png";
-import userReply from "../../iconReply.png";
-import userSupport from "../../iconSupport.png";
-import userRemove from "../../iconRemove.png";
+import React, { useState, useEffect } from "react";
+import userIcon from "../../../iconUser.png";
+import userReply from "../../../iconReply.png";
+import userSupport from "../../../iconSupport.png";
+import userRemove from "../../../iconRemove.png";
 
 const CommentInfo = ({
 	handleShowReply,
+	handleShowUpdate,
 	isComment,
+	isUpdate,
 	comment,
 	addComment,
+	deleteUserComment,
 	activity,
 	setActivity,
+	user,
+	idUser,
 }) => {
-	const [commentArea, setCommentArea] = useState("");
+	const [commentArea, setCommentArea] = useState(
+		isUpdate ? comment.text : ""
+	);
 
 	const t = isComment ? "none" : "light";
 	const box = `box ${t}`;
@@ -28,7 +35,9 @@ const CommentInfo = ({
 					/>
 				</div>
 				<div>
-					<h5 className="box--user--name">{comment.name}</h5>
+					<h5 className="box--user--name">
+						{!isComment ? user : comment.name}
+					</h5>
 				</div>
 			</div>
 
@@ -49,11 +58,13 @@ const CommentInfo = ({
 								className="action"
 								src={userSupport}
 								alt="icon support"
+								onClick={handleShowUpdate}
 							/>
 							<img
 								className="action"
 								src={userRemove}
 								alt="icon remove"
+								onClick={() => deleteUserComment(comment.id)}
 							/>
 						</div>
 					</>
@@ -71,13 +82,39 @@ const CommentInfo = ({
 								className="action btn btn--success"
 								onClick={() => {
 									addComment(
+										isUpdate ? comment.id : -1,
+										idUser,
+										user,
 										commentArea,
-										comment.replyUserId
+										isUpdate
+											? comment.replyUserId === ""
+												? "-1"
+												: comment.replyUserId
+											: comment.replyUserCommentId === -1
+											? "-1"
+											: comment.userId,
+										isUpdate &&
+											comment.replyUserCommentId !== -1
+											? comment.replyUserCommentId
+											: comment.id === undefined
+											? -1
+											: comment.id,
+										comment.groupId,
+										isUpdate
 									);
+									setCommentArea("");
 								}}>
-								Comment
+								{isUpdate ? "Update" : "Comment"}
 							</button>
-							<button className="action btn">Cancel</button>
+							<button
+								className="action btn"
+								onClick={
+									isUpdate
+										? handleShowUpdate
+										: handleShowReply
+								}>
+								Cancel
+							</button>
 						</div>
 					</>
 				)}

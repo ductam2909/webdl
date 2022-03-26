@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ConfigEfcore.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220321095518_InitData")]
-    partial class InitData
+    [Migration("20220326011315_InitMigration")]
+    partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,36 +23,6 @@ namespace ConfigEfcore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("CongfigEfcore.Models.CommentGroup", b =>
-                {
-                    b.Property<string>("CommentId")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<string>("GroupId")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.HasKey("CommentId");
-
-                    b.HasIndex("GroupId");
-
-                    b.ToTable("Comments");
-
-                    b.HasData(
-                        new
-                        {
-                            CommentId = "1",
-                            GroupId = "1"
-                        },
-                        new
-                        {
-                            CommentId = "2",
-                            GroupId = "1"
-                        });
-                });
 
             modelBuilder.Entity("CongfigEfcore.Models.Group", b =>
                 {
@@ -85,17 +55,20 @@ namespace ConfigEfcore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("CommentGroupId")
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GroupId")
                         .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<DateTime>("CreateAt")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ReplyUserCommentId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ReplyUserId")
                         .IsRequired()
@@ -113,7 +86,7 @@ namespace ConfigEfcore.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommentGroupId");
+                    b.HasIndex("GroupId");
 
                     b.ToTable("Users");
 
@@ -121,9 +94,10 @@ namespace ConfigEfcore.Migrations
                         new
                         {
                             Id = 1,
-                            CommentGroupId = "1",
                             CreateAt = new DateTime(2000, 8, 27, 3, 11, 48, 0, DateTimeKind.Unspecified),
+                            GroupId = "1",
                             Name = "Nguyễn Thanh Huy",
+                            ReplyUserCommentId = -1,
                             ReplyUserId = "",
                             Text = "How to build comment chat Ef core?",
                             UserId = "1"
@@ -131,9 +105,10 @@ namespace ConfigEfcore.Migrations
                         new
                         {
                             Id = 2,
-                            CommentGroupId = "1",
                             CreateAt = new DateTime(2000, 8, 27, 3, 12, 55, 0, DateTimeKind.Unspecified),
+                            GroupId = "1",
                             Name = "Nguyễn Thị Thu Diệu",
+                            ReplyUserCommentId = 1,
                             ReplyUserId = "1",
                             Text = "wacth yuotube and i have link create db https://code-maze.com/entity-framework-core-series/",
                             UserId = "2"
@@ -141,9 +116,10 @@ namespace ConfigEfcore.Migrations
                         new
                         {
                             Id = 3,
-                            CommentGroupId = "1",
                             CreateAt = new DateTime(2000, 8, 27, 3, 13, 56, 0, DateTimeKind.Unspecified),
+                            GroupId = "1",
                             Name = "Nguyễn Thanh Huy",
+                            ReplyUserCommentId = 2,
                             ReplyUserId = "2",
                             Text = "yeah tks yous, i try!",
                             UserId = "1"
@@ -151,9 +127,10 @@ namespace ConfigEfcore.Migrations
                         new
                         {
                             Id = 4,
-                            CommentGroupId = "1",
                             CreateAt = new DateTime(2000, 8, 27, 4, 15, 20, 0, DateTimeKind.Unspecified),
+                            GroupId = "1",
                             Name = "Amino Oreki",
+                            ReplyUserCommentId = 2,
                             ReplyUserId = "2",
                             Text = "wow , great link , tks you?",
                             UserId = "3"
@@ -161,9 +138,10 @@ namespace ConfigEfcore.Migrations
                         new
                         {
                             Id = 5,
-                            CommentGroupId = "1",
                             CreateAt = new DateTime(2000, 8, 27, 3, 13, 41, 0, DateTimeKind.Unspecified),
+                            GroupId = "1",
                             Name = "Nguyễn Văn A",
+                            ReplyUserCommentId = 1,
                             ReplyUserId = "1",
                             Text = "inbox me ...",
                             UserId = "4"
@@ -171,9 +149,10 @@ namespace ConfigEfcore.Migrations
                         new
                         {
                             Id = 6,
-                            CommentGroupId = "2",
                             CreateAt = new DateTime(2000, 10, 27, 2, 45, 41, 0, DateTimeKind.Unspecified),
+                            GroupId = "1",
                             Name = "Nguyễn Thị Thu Diệu",
+                            ReplyUserCommentId = -1,
                             ReplyUserId = "",
                             Text = "Kiến thức thật tuyệt vời , thật tuyệt khi được biết đến chúng!",
                             UserId = "2"
@@ -181,19 +160,20 @@ namespace ConfigEfcore.Migrations
                         new
                         {
                             Id = 7,
-                            CommentGroupId = "2",
                             CreateAt = new DateTime(2000, 10, 27, 2, 46, 2, 0, DateTimeKind.Unspecified),
+                            GroupId = "1",
                             Name = "Nguyễn Thanh Huy",
+                            ReplyUserCommentId = 6,
                             ReplyUserId = "2",
                             Text = "không có chi nè!",
                             UserId = "1"
                         });
                 });
 
-            modelBuilder.Entity("CongfigEfcore.Models.CommentGroup", b =>
+            modelBuilder.Entity("CongfigEfcore.Models.UserComment", b =>
                 {
                     b.HasOne("CongfigEfcore.Models.Group", "Group")
-                        .WithMany("CommentGroups")
+                        .WithMany("UserComments")
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -201,25 +181,9 @@ namespace ConfigEfcore.Migrations
                     b.Navigation("Group");
                 });
 
-            modelBuilder.Entity("CongfigEfcore.Models.UserComment", b =>
-                {
-                    b.HasOne("CongfigEfcore.Models.CommentGroup", "CommentGroup")
-                        .WithMany("UserComments")
-                        .HasForeignKey("CommentGroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CommentGroup");
-                });
-
-            modelBuilder.Entity("CongfigEfcore.Models.CommentGroup", b =>
-                {
-                    b.Navigation("UserComments");
-                });
-
             modelBuilder.Entity("CongfigEfcore.Models.Group", b =>
                 {
-                    b.Navigation("CommentGroups");
+                    b.Navigation("UserComments");
                 });
 #pragma warning restore 612, 618
         }

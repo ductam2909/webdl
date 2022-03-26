@@ -7,7 +7,6 @@ namespace Repository
     {
         private ApplicationContext applicationContext;
         private IRepositoryGroup repositoryGroup;
-        private IRepositoryCommentGroup repositoryCommentGroup;
         private IRepositoryUserComment repositoryUserComment;
 
         public RepositoryWrapper(ApplicationContext applicationContext)
@@ -21,15 +20,6 @@ namespace Repository
                     repositoryGroup = new RepositoryGroup(applicationContext);
                 return repositoryGroup;
              }
-        }
-
-        public IRepositoryCommentGroup CommentGroup {
-            get
-            {
-                if(repositoryCommentGroup == null)
-                    repositoryCommentGroup = new RepositoryCommentGroup(applicationContext);
-                return repositoryCommentGroup;
-            }
         }
 
         public IRepositoryUserComment UserComment

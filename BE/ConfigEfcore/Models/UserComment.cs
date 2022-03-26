@@ -57,9 +57,9 @@ public class UserComment
     /// <summary>
     /// <c>Xác định các comment nằm trong CommentGroup nào</c>
     /// </summary>
-    [Required(ErrorMessage = "CommentId is required!")]
-    [StringLength(15, ErrorMessage = "CommentId can't be longer than 15 characters")]
-    public string? CommentGroupId { get; set; }
+    [Required(ErrorMessage = "GroupId is required!")]
+    [StringLength(15, ErrorMessage = "GroupId can't be longer than 15 characters")]
+    public string? GroupId { get; set; }
 
-    public CommentGroup? CommentGroup { get; set; }
+    public Group? Group { get; set; }
 }

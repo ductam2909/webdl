@@ -19,7 +19,7 @@ public class GroupConfiguration : IEntityTypeConfiguration<Group>
       */
 
         builder
-            .HasMany(s => s.CommentGroups)
+            .HasMany(s => s.UserComments)
             .WithOne(s => s.Group)
             .HasForeignKey(s => s.GroupId)
             .OnDelete(DeleteBehavior.Cascade);

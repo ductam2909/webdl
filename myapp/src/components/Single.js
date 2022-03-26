@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 import NewIteam2 from "./Product/NewIteam2";
-import { CommentPages } from "./Comments";
+import { CommentPages } from "./components/Comments";
 function Single() {
 	const params = new URLSearchParams(window.location.search); // id=123
 	const id = params.get("id");
@@ -208,7 +208,12 @@ function Single() {
 							</div>
 							<div className="response">
 								<h3>Responses</h3>
-								<CommentPages name="detail" id="1" />
+								<CommentPages
+									name="detail"
+									id="1"
+									user="Nguyễn Thanh Huy"
+									idUser="1"
+								/>
 							</div>
 							<div className="opinion">
 								<h2>Leave Your Comment</h2>

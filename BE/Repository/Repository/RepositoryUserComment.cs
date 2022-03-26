@@ -13,13 +13,54 @@ namespace Repository
             _context = applicationContext;
         }
 
-        public IEnumerable<UserComment> GetChildUserComments(string page, string idCommentGr, string id)
+        public bool CreateUserComment(UserComment userComment)
         {
-            var childs = _context?.Users?.Where(e =>
-                                            e.CommentGroup.Group.Name.Equals(page)
-                                            && e.CommentGroup.CommentId.Equals(idCommentGr)
-                                           && e.ReplyUserCommentId.ToString().Equals(id)).OrderBy(x => x.CreateAt).ToList();
-            return childs;
+            try
+            {
+                Create(userComment);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+            return true;
+        }
+
+        public bool DeleteUserComment(string idUserComment)
+        {
+            try
+            {
+                var getUserCommemnt = _context?.Users?.FirstOrDefault(e => e.Id.ToString().Equals(idUserComment));
+                if(getUserCommemnt != null)
+                    Delete(getUserCommemnt);
+                return getUserCommemnt != null;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        public UserComment HasById(string page, string idPage , string idUserComment)
+        {
+            var user = _context.Users.FirstOrDefault(e => e.Id.ToString().Equals(idUserComment)
+                                      && e.Group.Name.Equals(page) &&
+                                      e.Group.GroupId.Equals(idPage));
+            return user;
+        }
+
+        public bool UpdateUserComment(UserComment oldUerComment , UserComment newUserComment)
+        {
+            try
+            {
+                oldUerComment.Text = newUserComment.Text;
+                return true;
+            }catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
         }
     }
 }
