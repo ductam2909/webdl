@@ -16,7 +16,7 @@ public class UserComment
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-
+    
     /// <summary>
     ///     <c>xác định Id của người viết comment</c>
     /// </summary>
@@ -57,17 +57,9 @@ public class UserComment
     /// <summary>
     /// <c>Xác định các comment nằm trong CommentGroup nào</c>
     /// </summary>
-    [Required(ErrorMessage = "CommentId is required!")]
-    [StringLength(15, ErrorMessage = "CommentId can't be longer than 15 characters")]
-    public string? CommentGroupId { get; set; }
+    [Required(ErrorMessage = "GroupId is required!")]
+    [StringLength(15, ErrorMessage = "GroupId can't be longer than 15 characters")]
+    public string? GroupId { get; set; }
 
-    public CommentGroup? CommentGroup { get; set; }
-
-
-
-    public override string ToString()
-    {
-        return "ID = " + Id + " - UserId " + UserId + " - Name " + Name + " - Text " + Text + " - CreateAt " + CreateAt + " - CommentGroupId " + CommentGroupId;
-    }
-
+    public Group? Group { get; set; }
 }

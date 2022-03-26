@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 using Repository.Contracts;
 using CongfigEfcore.Context;
-
+using System.Linq.Expressions;
 
 namespace Repository
 {
@@ -22,12 +22,12 @@ namespace Repository
 
         public void Create(T entity)
         {
-            throw new NotImplementedException();
+            applicationContext.Set<T>().Add(entity);
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            applicationContext?.Set<T>().Remove(entity);
         }
 
         /**
@@ -40,7 +40,12 @@ namespace Repository
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            applicationContext.Set<T>().Update(entity);
+        }
+
+        public IQueryable<T> FindCondition(Expression<Func<T, bool>> expression)
+        {
+            return applicationContext.Set<T>().Where(expression).AsNoTracking();
         }
     }
 }

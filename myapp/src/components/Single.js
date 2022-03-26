@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
 import NewIteam2 from "./Product/NewIteam2";
-import { CommentPages } from "./Comments";
+import { CommentPages } from "./components/Comments";
 function Single() {
 	const params = new URLSearchParams(window.location.search); // id=123
 	const id = params.get("id");

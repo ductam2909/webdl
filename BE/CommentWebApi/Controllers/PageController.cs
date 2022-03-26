@@ -26,76 +26,198 @@ namespace Domain.Controllers
             _loggerManager = loggerManager;
         }
 
+
+
         /// <summary>
-        ///     <c> [GET] api/page/id </c>
+        ///     lấy tất cả comment trong [GET] api/get/page/id
         /// </summary>
-        /// <param"id"></param>
-        /// <returns>Trả về những CommentGroup có trong page</returns>
-        [HttpGet("{name}/{id}")]
-        public IActionResult GetRootCommentGroup(string name, string id)
+        /// <param name="page">tên page</param>
+        /// <param name="id">id page</param>
+        /// <returns></returns>
+        [HttpGet("get/{page}/{id}")]
+        public IActionResult getAllCommentInGroup(string page , string id)
         {
             try
             {
-                var userComment = _repository.CommentGroup.getRootUserComment(name, id);
-                _loggerManager.Info($"Returned all CommentGroup from database.");
-                return Ok(userComment);
-            }
-            catch (Exception ex)
+                var allC =_repository.Group.GetAllComment(page , id);
+                _loggerManager.Info($"Returned getAllCommentInGroup from database.");
+                return Ok(allC);
+            }catch (Exception ex)
             {
-                _loggerManager.Error($"Something went wrong inside GetAllCommentGroup action: {ex.Message}");
-                return StatusCode(500, "Server Error");
+                _loggerManager.Error($"Something went wrong inside getAllCommentInGroup action: {ex.Message}");
+                return StatusCode(500, "server error!");
             }
         }
 
         /// <summary>
-        ///     <c> [GET] api/page/idCommentGr/id </c>
-        /// </summary>
-        /// <param"id"></param>
-        /// <returns>Trả về những ChildUserComponent có trong UserComponent</returns>
-        [HttpGet("{page}/{idCommentGr}/children/{id}")]
-        public IActionResult getChildFromUserComment(string page, string idCommentGr, string id)
-        {
-            try
-            {
-                var listChild = _repository.UserComment.GetChildUserComments(page, idCommentGr, id);
-                _loggerManager.Info($"Returned Child UserComment from database.");
-                return Ok(listChild);
-            }
-            catch (Exception ex)
-            {
-                _loggerManager.Error($"Something went wrong inside getChildFromUserComment action: {ex.Message}");
-                return StatusCode(500, "Server Error");
-            }
-        }
-
-        /// <summary>
-        ///     Tạo mới 1 comment trong name group = page và idCommentGr = idGroup  
+        ///     Tạo mới 1 comment trong name group = page và idCommentGr = idGroup  [Post] api/create/{page}/{idCOmnetGr}
         /// </summary>
         /// <param name="userComment">data from client</param> 
         /// <param name="page">name page curent</param>
-        /// <param name="idCommentGr">idGroup of page</param>
+        /// <param name="idPage">idGroup of page</param>
         /// <returns></returns>
-        [HttpPost("create/{page}/{idCommentGr}")]
-        public IActionResult CreateUserComment([FromBody] UserComment userComment, string page, string idCommentGr)
+        [HttpPost("create/{page}/{idPage}")]
+        public IActionResult CreateUserComment([FromBody] UserComment userComment, string page, string idPage)
         {
             try
             {
-                bool hasCreateUserComment = _repository.UserComment.CreateUserComment(userComment, page, idCommentGr);
+                // check obj
+                if (userComment == null)
+                {
+                    _loggerManager.Error($"Something went wrong inside CreateUserComment : UserComment is null");
+                    return BadRequest("Model is null");
+                }
+
+                // Validation obj
+                if (!ModelState.IsValid)
+                {
+                    _loggerManager.Error($"Something went wrong inside CreateUserComment : UserComment is not model");
+                    return BadRequest("Model is not IsValid");
+                }
+
+                // check page && idPage
+                var checkPage = _repository.Group.GetGroupWith(page, idPage);
+                if (!checkPage)
+                {
+                    _loggerManager.Error($"Something went wrong inside CreateUserComment : {page}/{idPage} is not found");
+                    return BadRequest($"{page}/{idPage} not found");
+                }
+
+
+                bool hasCreateUserComment = _repository.UserComment.CreateUserComment(userComment);
                 if (!hasCreateUserComment)
                 {
-
+                    _loggerManager.Error($"Something went wrong inside CreateUserComment: create not succes");
+                    return StatusCode(500, "Add Not Succes!");
                 }
                 else
                 {
+                    _repository.Save();
+                    _loggerManager.Info($"Returned CreateUserComment from database.");
                     return Ok("Create Succes!");
                 }
             }
             catch (Exception ex)
             {
                 _loggerManager.Error($"Something went wrong inside CreateUserComment action: {ex.Message}");
+                return StatusCode(500, ex.Message);
+            }
+       
+        }
+
+
+        /// <summary>
+        ///     xóa 1 comment với <paramref name="idUser"/> tại cị trí [HttpDelete] api/delete/{page}/{idPage}"
+        /// </summary>
+        /// <param name="idRemove">Id UserComment cần xóa</param>
+        /// <param name="page">page curent</param>
+        /// <param name="idPage">idPage of page</param>
+        /// <returns></returns>
+        [HttpDelete("delete/{page}/{idPage}/{idRemove}")]
+        public IActionResult DeleteUserComment(string page , string idPage ,string idRemove)
+        {
+            try
+            {
+                // check page && idPage
+                var checkPage = _repository.Group.GetGroupWith(page, idPage);
+                if (!checkPage)
+                {
+                    _loggerManager.Error($"Something went wrong inside DeleteUserComment : {page}/{idPage} is not found");
+                    return BadRequest($"{page}/{idPage} not found");
+                }
+
+                // check id contain in page
+                var checkIdUserComment = _repository.UserComment.HasById(page, idPage, idRemove);
+                if (checkIdUserComment == null)
+                {
+                    _loggerManager.Error($"Something went wrong inside DeleteUserComment : {idRemove} is not found in {page}/{idPage} ");
+                    return BadRequest($"{idRemove} not found");
+                }
+
+                // kiểm tra page , kiểm tra idCommentGr , kiểm tra idUser có tồn tại không
+                var hasDelete = _repository.UserComment.DeleteUserComment(idRemove);
+                if (hasDelete)
+                {
+                    _repository.Save();
+                    _loggerManager.Info($"Returned DeleteUserComment from database.");
+                    return Ok("Delete Succes!");
+                }
+                else
+                {
+                    _loggerManager.Error($"Something went wrong inside DeleteUserComment: delete not succes");
+                    return StatusCode(500, "Server Error");
+                }
+             
+            }
+            catch (Exception ex)
+            {
+                _loggerManager.Error($"Something went wrong inside DeleteUserComment action: {ex.Message}");
                 return StatusCode(500, "Server Error");
             }
-            return Ok();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page">page curent</param>
+        /// <param name="idPage">id of page</param>
+        /// <param name="idUpdate">id of UserCOmment need Update</param>
+        /// <param name="userComment">new object</param>
+        /// <returns></returns>
+        [HttpPut("update/{page}/{idPage}/{idUpdate}")]
+        public IActionResult UpdateUserComment([FromBody] UserComment userComment ,string page , string idPage , string idUpdate)
+        {
+            try
+            {
+                // check obj
+                if (userComment == null)
+                {
+                    _loggerManager.Error($"Something went wrong inside UpdateUserComment : UserComment is null");
+                    return BadRequest("Model is null");
+                }
+
+                // Validation obj
+                if (!ModelState.IsValid)
+                {
+                    _loggerManager.Error($"Something went wrong inside UpdateUserComment : UserComment is not model");
+                    return BadRequest("Model not valid");
+                }
+
+                // check page && idPage
+                var checkPage = _repository.Group.GetGroupWith(page, idPage);
+                if (!checkPage)
+                {
+                    _loggerManager.Error($"Something went wrong inside UpdateUserComment : {page}/{idPage} is not found");
+                    return BadRequest($"{page}/{idUpdate} not found");
+                }
+
+                // check id contain in page
+                var checkIdUserComment = _repository.UserComment.HasById(page, idPage, idUpdate);
+                if (checkIdUserComment == null)
+                {
+                    _loggerManager.Error($"Something went wrong inside UpdateUserComment : {idUpdate} is not found in {page}/{idPage} ");
+                    return BadRequest($"{idUpdate} Not Found");
+                }
+
+                bool update = _repository.UserComment.UpdateUserComment(checkIdUserComment , userComment);
+
+                if (update)
+                {
+                    _repository.Save();
+                    _loggerManager.Info($"Returned UpdateUserComment from database.");
+                    return Ok("update succes!");
+                }
+                else
+                {
+                    _loggerManager.Error($"Something went wrong inside UpdateUserComment: update not succes");
+                    return StatusCode(500, "Server Error");
+                }
+            }catch (Exception ex)
+            {
+                _loggerManager.Error($"Something went wrong inside UpdateUserComment action: {ex.Message}");
+                return StatusCode(500, "Server Error");
+            }
+           
         }
 
 

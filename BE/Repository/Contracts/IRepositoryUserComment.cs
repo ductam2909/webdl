@@ -4,7 +4,12 @@ namespace Repository.Contracts
 {
     public interface IRepositoryUserComment : IRepositoryBase<UserComment>
     {
-        public IEnumerable<UserComment> GetChildUserComments(string page, string idCommentGr, string id);
-        public bool CreateUserComment(UserComment userComment, string page, string id);
+        public bool CreateUserComment(UserComment userComment);
+
+        public bool DeleteUserComment(string idUserComment);
+
+        public bool UpdateUserComment(UserComment oldUerComment , UserComment newUserComment);
+
+        public UserComment HasById(string page , string idPage , string idUserComment);
     }
 }
