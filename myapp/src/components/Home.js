@@ -39,6 +39,7 @@ function Home(){
                   <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu						
                   </button>
                   {/* Collect the nav links, forms, and other content for toggling */}
+                  
                   <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav">
                     <li><Link to='/'>Home</Link></li>
