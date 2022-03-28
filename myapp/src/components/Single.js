@@ -129,29 +129,18 @@ function Single() {
 									Menu
 								</button>
 								{/* Collect the nav links, forms, and other content for toggling */}
-								<div
-									className="collapse navbar-collapse"
-									id="bs-example-navbar-collapse-1">
+								<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul className="nav navbar-nav">
-										<li>
-											<Link to="/">Home</Link>
-										</li>
-										<li>
-											<Link to="/about">About</Link>
-										</li>
-										<li>
-											<a href="services.html">Services</a>
-										</li>
-										{/* <li><a href="codes.html">Codes</a></li>	 */}
-										<li>
-											<Link to="/gallery">Gallery</Link>
-										</li>
-										<li>
-											<a href="contact.html">Contact</a>
-										</li>
-										<div className="clearfix"> </div>
-									</ul>
-								</div>
+									<li><Link to='/'>Home</Link></li>
+									<li><Link to='/about'>About</Link></li>
+									<li><a href="#">Services</a></li>
+									{/* <li><a href="codes.html">Codes</a></li>	 */}
+											<li><Link to='/gallery'>Gallery</Link></li>
+									<li><a href="#">Contact</a></li>
+									<li><Link to='/login'>Login</Link></li>
+									<div className="clearfix"> </div>
+									</ul>	
+								</div>	
 							</nav>
 						</div>
 						<div className="clearfix"> </div>

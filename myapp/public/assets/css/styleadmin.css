@@ -4,7 +4,7 @@
 * Copyright 2013-2021 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
 */
-/*!
+/*! 
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -593,7 +593,9 @@ progress {
   font-size: 0.875em;
   color: #6c757d;
 }
-
+.canhgiua{
+  align-content:center;
+}
 .container2,
 .container2-fluid,
 .container2-xxl,

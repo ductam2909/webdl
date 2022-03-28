@@ -58,16 +58,17 @@ class About extends Component{
           </button>
           {/* Collect the nav links, forms, and other content for toggling */}
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav">
-                     <li><Link to='/'>Home</Link></li>
+                    <ul className="nav navbar-nav">
+                    <li><Link to='/'>Home</Link></li>
                       <li><Link to='/about'>About</Link></li>
-                      <li><a href="services.html">Services</a></li>
+                      <li><a href="#">Services</a></li>
                       {/* <li><a href="codes.html">Codes</a></li>	 */}
 					           <li><Link to='/gallery'>Gallery</Link></li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><Link to='/login'>Login</Link></li>
                       <div className="clearfix"> </div>
-            </ul>	
-          </div>	
+                    </ul>	
+                  </div>
         </nav>		
       </div>
       <div className="clearfix"> </div>
@@ -80,18 +81,16 @@ class About extends Component{
   <div className="container">
     <div className="w3l-about-heading">
       <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta efficitur ante quis volutpat.</p>
+      <p>Trang tin tổng hợp và giới thiệu những điểm đến du lịch Đà Nẵng, món ăn ngon, khách sạn đẹp, dịch vụ du lịch, ẩm thực, ăn ở đâu, ngủ ở đâu, chơi ở đâu khi đi du lịch Đà Nẵng…</p>
     </div>
     <div className="agileits-a-about-grids">
       <div className="col-md-5 agileits-a-about-left">
-        <img src="images/a1.jpg" alt="" />
+        <img src="https://webdulichdanang.com/wp-content/uploads/2021/07/cau-tran-thi-ly.jpeg" alt="" />
       </div>
       <div className="col-md-7 agileits-a-about-right">
-        <h3>A few words about us</h3>
-        <h4>Praesent et aliquam erat, in pellentesque erat. Nulla massa nisl, vulputate nec urna vel, sagittis rhoncus leo. Donec pharetra congue tellus sed fringilla. Aliquam tellus est, mattis id nulla at, placerat bibendum velit. </h4>
-        <p>Fusce tincidunt vitae purus in interdum. Sed mattis erat vitae nunc dignissim, a facilisis elit porta. Nam a dui id magna tempus tempor. Mauris vel nunc nec ante semper facilisis a sit amet dolor. Aliquam viverra ex felis, consequat condimentum augue ultrices vel. Pellentesque sed nibh ac diam tempor fringilla sit amet a tortor. Praesent sodales sapien turpis.
-          <span>Maecenas vestibulum rhoncus rhoncus. Pellentesque ullamcorper consectetur elit sit amet rhoncus. Maecenas lobortis est vel odio volutpat laoreet. Praesent pharetra interdum lorem, eleifend ullamcorper sapien mattis efficitur. Phasellus sed nisi ultrices, sodales enim non, ullamcorper sapien. Nullam mollis tempus mauris in vulputate.</span>
-        </p>
+        <h3>Đà Nẵng – Thành phố biển đáng sống nhất</h3>
+        <h4>Đà Nẵng không chỉ nổi tiếng những địa điểm du lịch nổi tiếng như: Bà Nà Hills, các bãi biển đẹp, những dịch vụ du lịch đẳng cấp mà còn nổi tiếng bởi những cây cầu là biểu tượng đặc trưng, mang nét quyến rũ khi bắt ngang sông Hàn. Hãy cùng Web Du Lịch Đà Nẵng điểm qua những cây cầu nổi tiếng của Đà Nẵng. </h4>
+        <p>Là thành phố lớn nhất miền Trung, Đà Nẵng khoác lên mình sự nhộn nhịp và huyên náo của một trung tâm kinh tế - văn hóa lớn nhất khu vực. Được bao bọc bởi biển cả xanh ngát và núi non hùng vĩ, đây là thành phố đáng sống với nhiều thắng cảnh làm say lòng người cùng những giá trị văn hóa độc đáo. Con người Đà Nẵng bình dị, mến khách đã trở thành biểu tượng của mảnh đất này. </p>
       </div>
       <div className="clearfix"> </div>
     </div>
@@ -102,11 +101,11 @@ class About extends Component{
 <div className="jarallax different">
   <div className="container">
     <div className="w3-different-heading">
-      <h3>Why we are different</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta efficitur ante quis volutpat.</p>
+      <h3>Tổng Quan Đà Nẵng</h3>
+      <p>Đà Nẵng là thành phố lớn thứ 4 ở Việt Nam sau Thành phố Hồ Chí Minh, Hà Nội và Hải Phòng về đô thị hóa và phát triển kinh tế – xã hội. Nằm trên bờ Biển Đông có cửa sông Hàn, Đà Nẵng là một trong những thành phố cảng có vị trí chiến lược của miền Trung Việt Nam và là một trong 5 thành phố trực thuộc Trung ương.</p>
     </div>
     <div className="w3agile-different-info">
-      <p>Cras vehicula massa id ipsum venenatis, non convallis libero pellentesque. Sed tristique massa et mattis mattis. Nunc euismod consequat ex, eu tincidunt justo malesuada vitae. Sed auctor diam quis nulla hendrerit porta. Quisque venenatis, tortor quis tristique congue, lorem lectus elementum augue, in laoreet lorem justo lacinia velit. Phasellus tempus luctus velit, eu fermentum arcu porttitor sit amet. Suspendisse id efficitur sem. Donec laoreet ante at facilisis dictum. Donec sodales porta orci sed porta. Vivamus est enim, pharetra sit amet placerat ut, eleifend quis purus. Sed elementum tortor erat, placerat rutrum augue facilisis vel. Morbi feugiat tortor erat, nec gravida mauris egestas tincidunt. Sed vitae dignissim sapien.</p>
+      <p>Thành phố Đà Nẵng nằm ở miền Trung Việt Nam với khoảng cách gần như chia đều giữa thủ đô Hà Nội và thành phố Hồ Chí Minh. Đà Nẵng còn là trung tâm của 3 di sản văn hóa thế giới là Cố đô Huế, phố cổ Hội An và thánh địa Mỹ Sơn. Bắc giáp tỉnh Thừa Thiên – Huế, Tây và Nam giáp tỉnh Quảng Nam, Đông giáp Biển Đông. Đà Nẵng nằm ở trung độ đất nước, trên trục giao thông Bắc – Nam về đường bộ, đường sắt, đường biển, đường hàng không và điểm cuối của Hành lang Kinh tế Đông Tây trải dài từ Việt Nam, Lào, Thái Lan và Burma (Myanmar)</p>
       <div className="w3agile-button">
         <a href="single.html">Read More</a>
       </div>
@@ -119,14 +118,14 @@ class About extends Component{
   <div className="container">
     <div className="agileinfo-team-heading">
       <h3>Our Team</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta efficitur ante quis volutpat.</p>
+      <p>Dự án trang tin tức Đà Nẵng được xây dựng và phát triển bởi đội ngũ gồm 5 thành viên</p>
     </div>
     <div className="team-grids">
       <div className="col-md-33 agileinfo-team-grid">
-        <img src="assets/images/t1.jpg" alt="" />
+        <img src="https://i.pinimg.com/736x/d9/b8/3a/d9b83aa1a08be3e46ebb47254db8cf75.jpg" alt="" />
         <div className="captn">
           <h4>Đức Tâm</h4>
-          <p>Vestibulum </p>
+          <p>skyteam </p>
           <div className="w3l-social">
             <ul>
               <li><a href="#"><i className="fa fa-facebook" /></a></li>
@@ -138,10 +137,10 @@ class About extends Component{
       </div>
 
       <div className="col-md-33 agileinfo-team-grid">
-        <img src="assets/images/t1.jpg" alt="" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIFFSoVn5hGCJwT9RhooklzWW2jwmDQVUQstcSQbfT7Anx9uUcYFHmA5cBetxVPBjZpRw&usqp=CAU" alt="" />
         <div className="captn">
-          <h4>Mary Jane</h4>
-          <p>Vestibulum </p>
+          <h4>Ngọc Bảo</h4>
+          <p>skyteam </p>
           <div className="w3l-social">
             <ul>
               <li><a href="#"><i className="fa fa-facebook" /></a></li>
@@ -152,9 +151,9 @@ class About extends Component{
         </div>
       </div>
       <div className="col-md-33 agileinfo-team-grid">
-        <img src="assets/images/t1.jpg" alt="" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl7DRA21ej4BHehS4O_zLXpAXbppI7aJRdhiGwNGSFEBlEMbwfdpGFMKfp4i_LDBx9-DM&usqp=CAU" alt="" />
         <div className="captn">
-          <h4>Peter Parker</h4>
+          <h4>Thu diệu</h4>
           <p>Aliquam non</p>
           <div className="w3l-social">
             <ul>
@@ -166,10 +165,10 @@ class About extends Component{
         </div>
       </div>
       <div className="col-md-33 agileinfo-team-grid">
-        <img src="assets/images/t3.jpg" alt="" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIFFSoVn5hGCJwT9RhooklzWW2jwmDQVUQstcSQbfT7Anx9uUcYFHmA5cBetxVPBjZpRw&usqp=CAU" alt="" />
         <div className="captn">
-          <h4>Johan Botha</h4>
-          <p>Nulla molestie</p>
+          <h4>Thanh Huy</h4>
+          <p>Skyteam</p>
           <div className="w3l-social">
             <ul>
               <li><a href="#"><i className="fa fa-facebook" /></a></li>
@@ -180,10 +179,10 @@ class About extends Component{
         </div>
       </div>
       <div className="col-md-33 agileinfo-team-grid">
-        <img src="images/t4.jpg" alt="" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIFFSoVn5hGCJwT9RhooklzWW2jwmDQVUQstcSQbfT7Anx9uUcYFHmA5cBetxVPBjZpRw&usqp=CAU" alt="" />
         <div className="captn">
-          <h4>Steven Wilson</h4>
-          <p>Quisque vitae</p>
+          <h4>Thành Thông</h4>
+          <p>Skyteam</p>
           <div className="w3l-social">
             <ul>
               <li><a href="#"><i className="fa fa-facebook" /></a></li>

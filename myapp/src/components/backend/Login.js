@@ -170,11 +170,11 @@ export default function Login() {
               </div>
             </div>
           </div>
-          <div className="btnn">
+          {/* <div className="btnn">
             <input type="checkbox" className="ckkss" /><span className="span">Remember me..?</span><br />
             <button type="submit">Login</button><br />
             <a href="#" className="for">Forgot password...?</a>  
-          </div>	
+          </div>	 */}
         </div>
       </div>
     </main>
