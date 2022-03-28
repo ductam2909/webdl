@@ -67,11 +67,11 @@ import NewIteam from './Product/NewIteam';
                     <ul className="nav navbar-nav">
                     <li><Link to='/'>Home</Link></li>
                       <li><Link to='/about'>About</Link></li>
-                      <li><a href="services.html">Services</a></li>
+                      <li><a href="#">Services</a></li>
                       {/* <li><a href="codes.html">Codes</a></li>	 */}
 					           <li><Link to='/gallery'>Gallery</Link></li>
-                      <li><a href="contact.html">Contact</a></li>
-                    
+                      <li><a href="#">Contact</a></li>
+                      <li><Link to='/login'>Login</Link></li>
                       <div className="clearfix"> </div>
                     </ul>	
                   </div>	
@@ -98,7 +98,7 @@ import NewIteam from './Product/NewIteam';
           <div className="news">
             <div className="news-heading">
               <h3>Các điểm đến lý tưởng</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta efficitur ante quis volutpat.</p>
+              <p>Trang tin tổng hợp và giới thiệu những điểm đến du lịch Đà Nẵng.</p>
             </div>
           
             <div className="news-grids">

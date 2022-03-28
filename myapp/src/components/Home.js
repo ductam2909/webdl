@@ -44,10 +44,10 @@ function Home(){
                     <ul className="nav navbar-nav">
                     <li><Link to='/'>Home</Link></li>
                       <li><Link to='/about'>About</Link></li>
-                      <li><a href="services.html">Services</a></li>
+                      <li><a href="#">Services</a></li>
                       {/* <li><a href="codes.html">Codes</a></li>	 */}
 					           <li><Link to='/gallery'>Gallery</Link></li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="#">Contact</a></li>
                       <li><Link to='/login'>Login</Link></li>
                       <div className="clearfix"> </div>
                     </ul>	
@@ -84,7 +84,7 @@ function Home(){
             <div className="item">
               <div className="slider slider2">
                 <div className="carousel-caption kb_caption kb_caption_center slider-grid">
-                  <h3>Biển mỹ Khê</h3>
+                  <h3>Mỹ Khê</h3>
                   <p>Top 1 trong 6 bãi biển quyến rũ nhất hành tinh vào năm 2005</p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ function Home(){
           <div className="container">
             <div className="w3l-about-heading">
               <h2>Top Tours</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta efficitur ante quis volutpat.</p>
+              <p>Trang tin tổng hợp và giới thiệu những điểm đến du lịch Đà Nẵng, món ăn ngon, khách sạn đẹp, dịch vụ du lịch, ẩm thực, ăn ở đâu, ngủ ở đâu, chơi ở đâu khi đi du lịch Đà Nẵng…</p>
             </div>
             <div className="about-grids">
               <div className="col-md-3 about-grid">
@@ -160,7 +160,7 @@ function Home(){
               <div className="col-md-4 news-grid">
                 <div className="agile-news-grid-info">
                   <div className="news-grid-info-img">
-                    <a href="single.html"><img src="images/n1.jpg" alt="" /></a>
+                  <Link to="/single?id=7"><img src="https://statics.vinpearl.com/dia-diem-du-lich-da-nang-31_1631866506.jpg" alt="" /></Link>
                   </div>
                   <div className="news-grid-info-bottom">
                     <div className="date-grid">
@@ -173,8 +173,8 @@ function Home(){
                       <div className="clearfix"> </div>
                     </div>
                     <div className="news-grid-info-bottom-text">
-                      <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
-                      <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+                    <Link to="/single?id=7">Bà nà Hill</Link>
+                      <p>Địa chỉ: Thôn An Sơn, Hòa Ninh, H. Hòa Vang, TP Đà Nẵng</p>
                     </div>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ function Home(){
               <div className="col-md-4 news-grid">
                 <div className="agile-news-grid-info">
                   <div className="news-grid-info-img">
-                    <a href="single.html"><img src="images/n2.jpg" alt="" /></a>
+                  <Link to="/single?id=4"><img src="https://statics.vinpearl.com/dia-diem-du-lich-da-nang-5_1631854132.jpg" alt="" /></Link>
                   </div>
                   <div className="news-grid-info-bottom">
                     <div className="date-grid">
@@ -195,8 +195,8 @@ function Home(){
                       <div className="clearfix"> </div>
                     </div>
                     <div className="news-grid-info-bottom-text">
-                      <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
-                      <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+                     <Link to="/single?id=4">Đèo hải vân</Link>
+                      <p>Địa chỉ:Thuộc tt. Lăng Cô, Phú Lộc, Thừa Thiên Huế </p>
                     </div>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ function Home(){
               <div className="col-md-4 news-grid">
                 <div className="agile-news-grid-info">
                   <div className="news-grid-info-img">
-                    <a href="single.html"><img src="images/n3.jpg" alt="" /></a>
+                  <Link to="/single?id=9"><img src="https://statics.vinpearl.com/dia-diem-du-lich-da-nang-35_1631867538.jpg" alt="" /></Link>
                   </div>
                   <div className="news-grid-info-bottom">
                     <div className="date-grid">
@@ -217,8 +217,8 @@ function Home(){
                       <div className="clearfix"> </div>
                     </div>
                     <div className="news-grid-info-bottom-text">
-                      <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
-                      <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+                    <Link to="/single?id=9">Asia Park Đà Nẵng</Link>
+                      <p>Địa chỉ: 1 Phan Đăng Lưu, Hòa Cường Bắc, Hải Châu, Đà Nẵng</p>
                     </div>
                   </div>
                 </div>

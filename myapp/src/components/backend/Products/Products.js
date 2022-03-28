@@ -269,13 +269,14 @@ export default function Products() {
               </div>
             </nav>
           </div>
-          <div id="layoutSidenav_content">
+          <div id="layoutSidenav_content" className="canhgiua">
             <main>
-              <div className="container2-fluid px-4">
+              {/* <div className="container2-fluid px-4"> */}
+              <div>
                 <h1 className="mt-4">Dashboard</h1>
-                <ol className="breadcrumb mb-4">
+                {/* <ol className="breadcrumb mb-4">
                   <li className="breadcrumb-item active">Dashboard</li>
-                </ol>
+                </ol> */}
                 <div className="row">
                   <div className="col-xl-3 col-md-6">
                     <div className="card bg-primary text-white mb-4">
