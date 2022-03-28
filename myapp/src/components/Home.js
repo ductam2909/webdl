@@ -47,6 +47,7 @@ function Home(){
                       {/* <li><a href="codes.html">Codes</a></li>	 */}
 					           <li><Link to='/gallery'>Gallery</Link></li>
                       <li><a href="contact.html">Contact</a></li>
+                      <li><Link to='/login'>Login</Link></li>
                       <div className="clearfix"> </div>
                     </ul>	
                   </div>	
@@ -253,6 +254,7 @@ function Home(){
                     <li><a href="services.html">Services</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    
                   </ul>
                 </div>
               </div>
