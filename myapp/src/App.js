@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'; 
 import Home from './components/Home';
 import Navbar from './components/partial/Navbar';
@@ -74,7 +75,10 @@ function App() {
         
       </Router>
 
-   
+       <MessengerCustomerChat
+    pageId="100909895070351"
+    appId="425475819040368"
+  />
       
     </div>
   );
